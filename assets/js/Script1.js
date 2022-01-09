@@ -16,14 +16,14 @@ function passwordOptions() {
         return null
     }
     //prompts to ascertain password requirements
-    var IncludesSpecialChar = confirm("Do you want to include special characters?")
-    var includesLowerCase = confirm("Do you want to include special characters?")
-    var includesUpperCase = confirm("Do you want to include upper case")
-    var includesNumbers = confirm("Do you want to include numbers")
+    var includesSpecialChar = confirm("Do you want to include special characters?")
+    var includesLowerCase = confirm("Do you want to include lower case letters?")
+    var includesUpperCase = confirm("Do you want to include upper case letters?")
+    var includesNumbers = confirm("Do you want to include numbers?")
 
     var passwordCriteria = {
         length: length,
-        IncludesSpecialChar: IncludesSpecialChar,
+        includesSpecialChar: includesSpecialChar,
         includesLowerCase: includesLowerCase,
         includesUpperCase: includesUpperCase,
         includesNumbers: includesNumbers
@@ -43,11 +43,25 @@ function generatePassword() {
     var results = []
     var possibleCharacters = []
     var guaranteedCharacters = []
-    if (options.IncludesSpecialChar) {
+    if (options.includesSpecialChar) {
         possibleCharacters = possibleCharacters.concat(specialCharacters)
         guaranteedCharacters.push(randomFunction(specialCharacters))
     }
-    // if
+    
+    if (options.includesLowerCase) {
+        possibleCharacters = possibleCharacters.concat(lowerCase)
+        guaranteedCharacters.push(randomFunction(lowerCase))
+    }
+
+    if (options.includesUpperCase) {
+        possibleCharacters = possibleCharacters.concat(upperCase)
+        guaranteedCharacters.push(randomFunction(upperCase))
+    }
+
+    if (options.includesNumbers) {
+        possibleCharacters = possibleCharacters.concat(numbers)
+        guaranteedCharacters.push(randomFunction(numbers))
+    }
 
     for (let i = 0; i < options.length; i++) {
         var maybeCharacter = randomFunction(possibleCharacters)
@@ -71,9 +85,5 @@ var generateBtn = document.querySelector("#generate");
 generateBtn.addEventListener("click", writePassword);
 
 
-  //      for (var i = 0; i <= passwordLength; i++) {  //passwordOptions, nested, 2nd loop??
-//         var randomNumber = Math.floor(Math.random() * chars.length);
-//         password += chars.substring(randomNumber, randomNumber +1);
-//        }
-//  }
+  
 
