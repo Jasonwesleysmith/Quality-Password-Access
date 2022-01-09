@@ -26,7 +26,6 @@ function prompt2() {
   } else {
     includeLowercase = false
   }
-  
   prompt3()
 }
 
