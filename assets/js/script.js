@@ -1,4 +1,4 @@
-// Assignment Code
+// Assignment Code initial version
 // var generateBtn = document.querySelector("#generate");
 // generateBtn.addEventListener("click", prompt1);
 

@@ -73,7 +73,7 @@ function generatePassword() {
     }
     return results.join("")
 }
-//function to write password to field
+//function to write password to html text area
 function writePassword() {
     var password = generatePassword();
     var passwordText = document.querySelector("#password");
