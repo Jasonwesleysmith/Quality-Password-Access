@@ -11,4 +11,6 @@
 2. Created passwordOptions function to generate prompts
 3. Created 4 if statements and 2 for loops to generate password
 
+ https://jasonwesleysmith.github.io/Quality-Password-Access/
+
 
