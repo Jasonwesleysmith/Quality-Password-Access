@@ -6,7 +6,7 @@ var specialCharacters = ["+", "-", "&&", "||", "!", "(", ")", "{", "}", "[", "]"
     "~", "*", "?", ":"]
 // function to determine password length
 function passwordOptions() {
-    var length = parseInt(prompt("choose password length: (8-128 characters)")) //method
+    var length = parseInt(prompt("choose password length: (8-128 characters)"))
     if (length < 8) {
         alert("password needs to 8 or more characters")
         return null
@@ -36,7 +36,6 @@ function randomFunction(Arr) {
     return randomElement
 
 }
-
 //function to generate password
 function generatePassword() {
     var options = passwordOptions()
@@ -78,7 +77,6 @@ function writePassword() {
     var password = generatePassword();
     var passwordText = document.querySelector("#password");
     passwordText.value = password;
-
 }
 
 var generateBtn = document.querySelector("#generate");
